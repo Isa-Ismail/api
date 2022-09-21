@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import hotelRoute from './routes/hotels.js'
 import authRoute from './routes/auth.js'
+import cors from 'cors'
 
 //configuring app
 const app = express()
@@ -19,6 +20,11 @@ try {
 
 //middleware
 app.use(express.json())
+
+//CORS
+app.use(cors({
+  origin: '*'
+}))
 
 //All routes
 app.use('/api/hotels', hotelRoute)
