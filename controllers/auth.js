@@ -60,7 +60,7 @@ export const login = async( req, res, next) => {
 
         const token = jwt.sign({id: user._id, isAdmin: user.isAdmin}, process.env.JWT)
 
-        res.json({token})
+        res.json({token, id: user._id})
 
     } catch (err) {
         next(err)
