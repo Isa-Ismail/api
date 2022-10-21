@@ -16,6 +16,13 @@ const Notice = mongoose.Schema({
     message: {
         type: String,
         required: true
+    },
+    batch: {
+        type: String,
+        required: true
+    },
+    published: {
+        type: Date
     }
 })
 
