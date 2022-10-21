@@ -13,6 +13,9 @@ const Publications = new mongoose.Schema({
         type: String,
         required: true
     },
+    journal: {
+        type: String 
+    },
     published: {
         type: Date
     },
