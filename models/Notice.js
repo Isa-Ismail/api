@@ -21,7 +21,7 @@ const Notice = mongoose.Schema({
         type: String,
         required: true
     },
-    published: {
+    date: {
         type: Date
     }
 })
