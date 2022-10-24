@@ -32,6 +32,9 @@ export const register = async(req, res, next) => {
             city: req.body.city,
             phone: req.body.phone,
             country: req.body.country,
+            designation: req.body.designation,
+            isFaculty: req.body.isFaculty,
+            isAdmin: req.body.isAdmin,
             password: hash
         })
     
