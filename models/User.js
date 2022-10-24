@@ -46,6 +46,9 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    designation:{
+      type: String
+    },
     isFaculty: {
       type: Boolean,
       default: false
