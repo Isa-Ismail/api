@@ -2,7 +2,7 @@ import Publications from '../models/Publications.js'
 
 export const getAllPubs = async ( req, res, next ) => {
     try {
-        const pubs = await Publications.find()
+        const pubs = await Publications.find().populate('userId',['username', 'email'])
         res.json(pubs)
     } catch (err) {
         next(err)
