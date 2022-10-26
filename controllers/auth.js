@@ -35,7 +35,8 @@ export const register = async(req, res, next) => {
             designation: req.body.designation,
             isFaculty: req.body.isFaculty,
             isAdmin: req.body.isAdmin,
-            password: hash
+            password: hash,
+            designation: req.body.designation
         })
     
         await user.save()
