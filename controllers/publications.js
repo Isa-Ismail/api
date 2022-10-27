@@ -11,7 +11,7 @@ export const getAllPubs = async ( req, res, next ) => {
 
 export const getPubById = async( req, res, next) => {
     try {
-        const pub = await Publications.findById(req.params.id)
+        const pub = await Publications.find({userId: req.params.id})
         res.json(pub)
     } catch (err) {
         next(err)
