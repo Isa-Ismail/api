@@ -19,6 +19,9 @@ const Publications = new mongoose.Schema({
     published: {
         type: Date
     },
+    researchType:{
+        type: String
+    },
     url: {
         type: String,
         required: true
