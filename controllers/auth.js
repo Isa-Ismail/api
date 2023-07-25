@@ -41,7 +41,7 @@ export const register = async(req, res, next) => {
     
         await user.save()
     
-        res.json({message: 'User created, please Log in'})
+        res.json({message: 'User created, please Log in',  id: user._id})
 
     } catch (err) {
         next(err)

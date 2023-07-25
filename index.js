@@ -5,6 +5,7 @@ import hotelRoute from './routes/hotels.js'
 import authRoute from './routes/auth.js'
 import pubRoute from './routes/publication.js'
 import noticeRoute from './routes/notice.js'
+import quizRoute from './routes/quiz.js'
 import cors from 'cors'
 
 //configuring app
@@ -33,7 +34,7 @@ app.use('/api/hotels', hotelRoute)
 app.use('/api/auth', authRoute)
 app.use('/api/publications', pubRoute)
 app.use('/api/notice', noticeRoute)
-
+app.use('/api/quiz', quizRoute)
 //Error handling middleware
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500
