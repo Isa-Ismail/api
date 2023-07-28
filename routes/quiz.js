@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:userId', async (req, res, next) => { 
     
         try {
-            const quiz = await QuizSchema.find({ userId: req.params.userId });
+            const quiz = await QuizSchema.findOne({ userId: req.params.userId });
             res.json(quiz);
         } catch (err) {
             next(err)
