@@ -2,6 +2,28 @@ import express from 'express';
 import QuizSchema from '../models/Quiz.js';
 const router = express.Router();
 
+router.get('/', async (req, res, next) => { 
+
+    try {
+        const quiz = await QuizSchema.find();
+        res.json(quiz);
+    } catch (err) {
+        next(err)
+    }
+})
+
+// get quiz by userId
+
+router.get('/:userId', async (req, res, next) => { 
+    
+        try {
+            const quiz = await QuizSchema.find({ userId: req.params.userId });
+            res.json(quiz);
+        } catch (err) {
+            next(err)
+        }
+})
+
 router.post('/', async (req, res, next) => { 
 
     try {
