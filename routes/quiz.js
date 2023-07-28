@@ -32,12 +32,12 @@ router.post('/', async (req, res, next) => {
         if (found) {
             found.score = req.body.score;
             await found.save();
+        } else {
+            const { topic, userId, score } = req.body;
+            const quiz = new QuizSchema({ topic, userId, score });
+            await quiz.save();
+            res.send('Quiz saved to database');  
         }
-
-        const { topic, userId, score } = req.body;
-        const quiz = new QuizSchema({ topic, userId, score });
-        await quiz.save();
-        res.send('Quiz saved to database');   
     } catch (err) {
         next(err)
     }
