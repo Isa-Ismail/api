@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', async (req, res, next) => { 
 
     try {
-        const quiz = await QuizSchema.find();
+        const quiz = await QuizSchema.find().populate('userId', ['username']);
         res.json(quiz);
     } catch (err) {
         next(err)
