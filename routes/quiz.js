@@ -27,12 +27,13 @@ router.get('/:userId', async (req, res, next) => {
 router.post('/', async (req, res, next) => { 
 
     try {
-        const quizz = await QuizSchema.findOne({ userId: req.body.userId });
-        if (quizz) {
-            quiz.score = req.body.score;
-            await quiz.save();
-        }
+        const found = await QuizSchema.findOne({ userId: req.body.userId });
         
+        if (found) {
+            found.score = req.body.score;
+            await found.save();
+        }
+
         const { topic, userId, score } = req.body;
         const quiz = new QuizSchema({ topic, userId, score });
         await quiz.save();
