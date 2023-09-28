@@ -33,7 +33,7 @@ router.post('/', async (req, res, next) => {
             found.score = req.body.score;
             await found.save();
         } else {
-            const { topic, userId, score } = req.body;
+            const { topic, userId, username, score } = req.body;
             const quiz = new QuizSchema({ topic, userId, username, score });
             await quiz.save();
             res.send('Quiz saved to database');  
