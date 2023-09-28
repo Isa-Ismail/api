@@ -12,8 +12,7 @@ const QuizSchema = new Schema({
         required: true
     },
     userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
+        type: String
     },
     score: {
         type: Number,
