@@ -29,9 +29,10 @@ router.post('/', async (req, res, next) => {
     try {
         const found = await QuizSchema.findOne({ userId: req.body.userId });
         
-        if (found) {
+        if (found && found.topic === req.body.topic) {
             found.score = req.body.score;
             await found.save();
+            res.send('Quiz updated to database')
         } else {
             const { topic, userId, username, score } = req.body;
             const quiz = new QuizSchema({ topic, userId, username, score });
