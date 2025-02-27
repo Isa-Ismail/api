@@ -12,8 +12,6 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-// get quiz by userId
-
 router.get('/:userId', async (req, res, next) => { 
     
         try {
