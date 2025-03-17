@@ -22,3 +22,4 @@ export const protectedAccess = async (req, res, next) => {
         res.status(500).json({msg:'Server error'});
     }
 }
+
